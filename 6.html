@@ -1,0 +1,73 @@
+<!Doctype HTML>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="6.css">
+        <title> Frontend Task №7 </title>
+    </head>
+    <body>
+        
+        <div class="container">
+            <div class="horizontal-container">
+                <button id="button-1">
+                    Левая колонка
+                </button> 
+                
+                <button id="button-2"> 
+                    Обе две
+                </button>
+                
+                <button id="button-3">
+                    Права колонка
+                </button>
+            </div>
+            
+            <div class="content">
+                <div style="background: blue; height: 100%; width: 50%" id="cat">
+                    <img src="img/cat.jpg" alt="cat">
+                </div>
+                <div style="background: green; height: 100%; width: 50%" id="dog">
+                    <img src='img/dog.jpg' alt="dog">
+                </div>
+            </div>
+        </div>
+        
+        
+        <script type="module">
+            
+            let leftButton = document.getElementById('button-1');
+            let cat = document.getElementById('cat');
+            
+            let bothButton = document.getElementById('button-2');
+            
+            
+            let rightButton = document.getElementById('button-3');
+            let dog = document.getElementById('dog');
+            
+            leftButton.addEventListener('click', e => {
+                cat.style.width = "90%";
+                dog.style.width = "10%";
+                dog.children[0].style.display = "none";
+                cat.children[0].style.display = "inline-block";
+            });
+            
+            rightButton.addEventListener('click', e => {
+                dog.style.width = "90%";
+                cat.style.width = "10%";
+                cat.children[0].style.display = "none";
+                dog.children[0].style.display = "inline-block";
+            });
+            
+            bothButton.addEventListener('click', e => {
+                cat.children[0].style.display = "inline-block";
+                dog.children[0].style.display = "inline-block";
+                dog.style.width = "50%";
+                cat.style.width = "50%";
+            })
+           
+            
+        </script>
+        
+        
+    </body>
+</html> 
